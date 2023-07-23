@@ -1,0 +1,354 @@
+{
+	"info": {
+		"_postman_id": "94ce4682-820b-4ffa-afae-0b84bb55224a",
+		"name": "Expense Manager API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12768386"
+	},
+	"item": [
+		{
+			"name": "Read Expenses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/expenses",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"expenses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Expense",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/expenses/3",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"expenses",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Expense",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/expenses?id=14",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"expenses"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "14"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Expense",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"water bill\",\n    \"amount\": 700.00,\n    \"category\": \"Bills\",\n    \"description\": \"bills\",\n    \"date\": \"2022-01-01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/expenses",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"expenses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Expense",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"amount\": 200.00\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/expenses/55",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"expenses",
+						"55"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter By Category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/expenses/category?category=Bills",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"expenses",
+						"category"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "Bills"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter By Keyword",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/expenses/name?keyword=il",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"expenses",
+						"name"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "il"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter By Date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/expenses/date?startDate=2021-10-01",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"expenses",
+						"date"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2021-10-01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"bushan\",\n    \"email\": \"bushan@gmail.com\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/profile",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"age\": 29\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/profile",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/deactivate",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"deactivate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if (pm.response.code === 200) {",
+							"    pm.environment.set('authToken', pm.response.json().jwtToken)",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"bushan@gmail.com\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{authToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
